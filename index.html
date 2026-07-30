@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Profit Watch Address</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#AC9EF3;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+}
+
+button{
+    background:#fff;
+    color:#8F7EF8;
+    border:none;
+    border-radius:22px;
+    padding:24px 48px;
+    font-size:28px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    transition:.25s ease;
+}
+
+button:hover{
+    transform:translateY(-3px) scale(1.02);
+}
+
+button:active{
+    transform:scale(.97);
+}
+
+#status{
+    margin-top:28px;
+    color:white;
+    font-size:26px;
+    font-weight:700;
+    opacity:0;
+    transition:.35s;
+}
+
+.show{
+    opacity:1!important;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<button onclick="copyAddress()" id="copyBtn">
+New Profit Watch Address
+</button>
+
+<div id="status">
+✅ Copied!
+</div>
+
+</div>
+
+<script>
+function copyAddress(){
+
+const address="AxzMpxZ4dPT9C9CKyijEQjL1NvSdFJ343PWZjsxZZvWr";
+
+navigator.clipboard.writeText(address);
+
+const status=document.getElementById("status");
+const btn=document.getElementById("copyBtn");
+
+status.classList.add("show");
+btn.innerHTML="Address Copied ✓";
+
+setTimeout(()=>{
+status.classList.remove("show");
+btn.innerHTML="New Profit Watch Address";
+},2000);
+
+}
+</script>
+
+</body>
+</html>
